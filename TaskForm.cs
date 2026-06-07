@@ -24,18 +24,40 @@ namespace TaskManagementSystem
                     return;
                 }
 
-                // Task status
-                string completed = checkBox1.Checked ? "Completed" : "Pending";
+                // Create task object (OOP)
+                Task task;
+
+                if (comboBox2.Text == "Personal")
+                {
+                    task = new PersonalTask(
+                        textBox1.Text,
+                        richTextBox1.Text,
+                        comboBox1.Text,
+                        dateTimePicker1.Value,
+                        checkBox1.Checked
+                    );
+                }
+                else
+                {
+                    task = new WorkTask(
+                        textBox1.Text,
+                        richTextBox1.Text,
+                        comboBox1.Text,
+                        dateTimePicker1.Value,
+                        checkBox1.Checked
+                    );
+                }
 
                 // Add task to table
                 dataGridView1.Rows.Add(
-    textBox1.Text,
-    richTextBox1.Text,
-    comboBox1.Text,
-    dateTimePicker1.Value.ToShortDateString(),
-    completed,
-    comboBox2.Text
-);
+                    task.Title,
+                    task.Description,
+                    task.Priority,
+                    task.DueDate.ToShortDateString(),
+                    task.Completed ? "Completed" : "Pending",
+                    task.GetTaskType()
+                );
+                
 
                 MessageBox.Show("Task Added Successfully!");
 

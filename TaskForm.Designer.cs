@@ -47,7 +47,7 @@
             priority = new DataGridViewTextBoxColumn();
             dueDate = new DataGridViewTextBoxColumn();
             status = new DataGridViewTextBoxColumn();
-            Category = new DataGridViewTextBoxColumn();
+            TaskType = new DataGridViewTextBoxColumn();
             textBoxSearch = new TextBox();
             button5 = new Button();
             comboBox2 = new ComboBox();
@@ -175,12 +175,13 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { taskTitle, description, priority, dueDate, status, Category });
-            dataGridView1.Location = new Point(225, 400);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { taskTitle, description, priority, dueDate, status, TaskType });
+            dataGridView1.Location = new Point(225, 460);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(805, 102);
+            dataGridView1.Size = new Size(1029, 56);
             dataGridView1.TabIndex = 13;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
@@ -190,42 +191,36 @@
             taskTitle.HeaderText = "Task Title";
             taskTitle.MinimumWidth = 6;
             taskTitle.Name = "taskTitle";
-            taskTitle.Width = 125;
             // 
             // description
             // 
             description.HeaderText = "Description";
             description.MinimumWidth = 6;
             description.Name = "description";
-            description.Width = 125;
             // 
             // priority
             // 
             priority.HeaderText = "Priority";
             priority.MinimumWidth = 6;
             priority.Name = "priority";
-            priority.Width = 125;
             // 
             // dueDate
             // 
             dueDate.HeaderText = "Due Date";
             dueDate.MinimumWidth = 6;
             dueDate.Name = "dueDate";
-            dueDate.Width = 125;
             // 
             // status
             // 
             status.HeaderText = "Status";
             status.MinimumWidth = 6;
             status.Name = "status";
-            status.Width = 125;
             // 
-            // Category
+            // TaskType
             // 
-            Category.HeaderText = "Category";
-            Category.MinimumWidth = 6;
-            Category.Name = "Category";
-            Category.Width = 125;
+            TaskType.HeaderText = "Task Tyoe";
+            TaskType.MinimumWidth = 6;
+            TaskType.Name = "TaskType";
             // 
             // textBoxSearch
             // 
@@ -233,7 +228,6 @@
             textBoxSearch.Name = "textBoxSearch";
             textBoxSearch.Size = new Size(278, 27);
             textBoxSearch.TabIndex = 14;
-            textBoxSearch.Text = "textBoxSearch";
             // 
             // button5
             // 
@@ -278,7 +272,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1326, 553);
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(1323, 603);
             Controls.Add(button6);
             Controls.Add(label5);
             Controls.Add(comboBox2);
@@ -299,6 +294,7 @@
             Controls.Add(textBox1);
             Controls.Add(label1);
             Name = "TaskForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Task Management System";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -325,12 +321,12 @@
         private Button button5;
         private ComboBox comboBox2;
         private Label label5;
+        private Button button6;
         private DataGridViewTextBoxColumn taskTitle;
         private DataGridViewTextBoxColumn description;
         private DataGridViewTextBoxColumn priority;
         private DataGridViewTextBoxColumn dueDate;
         private DataGridViewTextBoxColumn status;
-        private DataGridViewTextBoxColumn Category;
-        private Button button6;
+        private DataGridViewTextBoxColumn TaskType;
     }
 }
